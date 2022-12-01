@@ -1,4 +1,4 @@
-![Project Diagram 1](https://user-images.githubusercontent.com/62657957/205106956-3bb699c7-26a9-42b3-bc74-a21e08cbfda9.png)
+
 # plant_factory_environment_management
 ![greenhouse-g005435a15_1920](https://user-images.githubusercontent.com/62657957/201473476-76da5457-6719-4da1-8280-bd0b45de6ff4.jpg)
 
