@@ -48,6 +48,9 @@ The environmental control system requires using cameras to monitor and record mu
 \4. Real-time monitoring with camera.  (Optional Recognition of harvest time – e.g. if tomato became red)
 
 \5. Send a notification/message to the phone if the temp/humidity is outside of expected range.
-![Project Diagram 1](https://user-images.githubusercontent.com/62657957/205106956-3bb699c7-26a9-42b3-bc74-a21e08cbfda9.png)
+
+
+![Project Diagram 1 (1)](https://user-images.githubusercontent.com/62657957/205108305-e7717d0a-cf22-4771-b7db-340660751ae0.png)
+
 
 [Plant.Factory.pdf](https://github.com/conark/plant_factory_environment_management/files/9994837/Plant.Factory.pdf)
