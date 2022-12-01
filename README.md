@@ -5,9 +5,7 @@
 
 # **Plant Factory - Environment Management** 
 
-**Name: test66666**
-
-**Student Number: test** 
+**Name: Natsumi Shimizu**
 
 # New Agriculture Style
 Smart & Sustanable 
