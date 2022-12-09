@@ -1,12 +1,11 @@
+
 # plant_factory_environment_management
 ![greenhouse-g005435a15_1920](https://user-images.githubusercontent.com/62657957/201473476-76da5457-6719-4da1-8280-bd0b45de6ff4.jpg)
 
 
 # **Plant Factory - Environment Management** 
 
-**Name: test66666**
-
-**Student Number: test** 
+**Name: Natsumi Shimizu**
 
 # New Agriculture Style
 Smart & Sustanable 
@@ -47,5 +46,9 @@ The environmental control system requires using cameras to monitor and record mu
 \4. Real-time monitoring with camera.  (Optional Recognition of harvest time – e.g. if tomato became red)
 
 \5. Send a notification/message to the phone if the temp/humidity is outside of expected range.
+
+
+![Project Diagram 1 (1)](https://user-images.githubusercontent.com/62657957/205108305-e7717d0a-cf22-4771-b7db-340660751ae0.png)
+
 
 [Plant.Factory.pdf](https://github.com/conark/plant_factory_environment_management/files/9994837/Plant.Factory.pdf)
