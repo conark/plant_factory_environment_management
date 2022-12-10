@@ -2,7 +2,7 @@ import BlynkLib
 from sense_hat import SenseHat
 from time import sleep
 
-BLYNK_AUTH = 'TeQOLZwkGYrr_1rAVOywQugDKFvy0cfF'
+BLYNK_AUTH = 'fFBWjj108jcqQ7XmRXeDQ4MCMHJ3os6_'
 # initialize Blynk
 blynk = BlynkLib.Blynk(BLYNK_AUTH)
 
@@ -20,9 +20,10 @@ def v3_write_handler(value):
     else:
         sense.clear()
 
-# infinite loop that waits for event
+# infinite loop that waits for event for temp and humidity
 while True:
     blynk.run()
     blynk.virtual_write(1, round(sense.temperature,2))
-    blynk.virtual_write(1, round(sense.temperature,2))
+    blynk.virtual_write(2, round(sense.humidity,2))
     sleep(0.5) # sleep for .5 second
+
