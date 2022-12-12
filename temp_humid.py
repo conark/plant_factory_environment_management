@@ -1,6 +1,8 @@
 import BlynkLib
 from sense_hat import SenseHat
 from time import sleep
+import requests
+
 
 BLYNK_AUTH = 'fFBWjj108jcqQ7XmRXeDQ4MCMHJ3os6_'
 # initialize Blynk
@@ -26,4 +28,23 @@ while True:
     blynk.virtual_write(1, round(sense.temperature,2))
     blynk.virtual_write(2, round(sense.humidity,2))
     sleep(0.5) # sleep for .5 second
+    # 温度が30度以上の場合# HTTP メソッドでblynkに通知
+    if sense.temperature >= 30:
+        print ('temp hot')
+        requests.get("https://blynk.cloud/external/api/logEvent?token=fFBWjj108jcqQ7XmRXeDQ4MCMHJ3os6_&code=temp_too_high")
+    elif sense.temperature <= 10:
+        print ('temp low')
+        requests.get("https://blynk.cloud/external/api/logEvent?token=fFBWjj108jcqQ7XmRXeDQ4MCMHJ3os6_&code=temp_too_low")
+    else:
+        print ('temp fine')
+    
+    if sense.humidity >= 50:
+        print ('humid high')
+        requests.get("https://blynk.cloud/external/api/logEvent?token=fFBWjj108jcqQ7XmRXeDQ4MCMHJ3os6_&code=humidity_too_high")
+    elif sense.humidity <= 20:
+        print ('humid low')
+        requests.get("https://blynk.cloud/external/api/logEvent?token=fFBWjj108jcqQ7XmRXeDQ4MCMHJ3os6_&code=humidity_too_low")
+    else:
+        print ('humid fine')
+
 
