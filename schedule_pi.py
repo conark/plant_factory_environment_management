@@ -6,6 +6,8 @@ import time
 import datetime
 import schedule
 import requests
+import storeFileFB
+import json
 
 # Initialize the camera and sensehat
 sense = SenseHat()
@@ -15,7 +17,7 @@ camera = PiCamera()
 camera.resolution = (1280, 720)  # Set resolution
 camera.framerate = 30  # Set frame rate
 camera.start_preview()
-frame = 1
+
 
  # for test pourpose, set time.sleep for 12 seconds
 def green_light():
@@ -32,11 +34,15 @@ def imageCap():
   sense.clear()
   # sense.clear(255,255,255) #for white light
   # set the location of image file and current time
-  currentTime = datetime.datetime.now()
+  currentTime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
   image = f'/home/pi/plant_management/plant_factory_environment_management/image/{currentTime}.jpg'
   camera.capture(image)
   #camera.capture('image/image.jpg')
   print(f'pic taken at {currentTime}') # print frame number to console
+  # store to firebase
+  storeFileFB.store_file(image)
+  storeFileFB.push_db(image, currentTime)
+  print('Image stored and location pushed to db')
   time.sleep(5)
 
 #####################################################
