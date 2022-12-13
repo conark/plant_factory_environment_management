@@ -5,6 +5,7 @@ from time import sleep
 import time
 import datetime
 import schedule
+import requests
 
 # Initialize the camera and sensehat
 sense = SenseHat()
@@ -16,7 +17,7 @@ camera.framerate = 30  # Set frame rate
 camera.start_preview()
 frame = 1
 
-
+ # for test pourpose, set time.sleep for 12 seconds
 def green_light():
   sense.clear(0, 255, 0)
   time.sleep(12)
@@ -38,7 +39,6 @@ def imageCap():
   print(f'pic taken at {currentTime}') # print frame number to console
   time.sleep(5)
 
-
 #####################################################
 # schedule everyday at 7:55am take pic, 8am and 8pm lights turn on
 
@@ -53,10 +53,22 @@ def imageCap():
 
 
 
+def feedMorning():
+  requests.get("https://blynk.cloud/external/api/logEvent?token=fFBWjj108jcqQ7XmRXeDQ4MCMHJ3os6_&code=feed_morning")  
+
+def feedEvening():
+  requests.get("https://blynk.cloud/external/api/logEvent?token=fFBWjj108jcqQ7XmRXeDQ4MCMHJ3os6_&code=feed_evening")  
+
+schedule.every().day.at("11:52").do(feedMorning)
+schedule.every().day.at("11:53").do(feedEvening)
+
+
 while True:
+  schedule.run_pending()
   red_light()
   green_light()
-  imageCap()
+  imageCap()  
+  time.sleep(1)
 
   ####################################
   # When use schedule

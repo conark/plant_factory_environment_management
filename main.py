@@ -1,6 +1,6 @@
 print ("runing? ")
 #working
-import light_imageCap
+import schedule
 
 #not working
 import temp_humid
