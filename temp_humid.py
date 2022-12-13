@@ -2,9 +2,14 @@ import BlynkLib
 from sense_hat import SenseHat
 from time import sleep
 import requests
+import os
+from dotenv import load_dotenv
 
+# load .env　file
+load_dotenv()
 
-BLYNK_AUTH = 'fFBWjj108jcqQ7XmRXeDQ4MCMHJ3os6_'
+BLYNK_AUTH = os.getenv ('BLYNK_AUTH')
+
 # initialize Blynk
 blynk = BlynkLib.Blynk(BLYNK_AUTH)
 
@@ -32,13 +37,13 @@ while True:
     if sense.temperature >= 30:
         print ('temp hot')
         requests.get("https://blynk.cloud/external/api/logEvent?token=fFBWjj108jcqQ7XmRXeDQ4MCMHJ3os6_&code=temp_too_high")
-    elif sense.temperature <= 10:
+    elif sense.temperature <= 25:
         print ('temp low')
         requests.get("https://blynk.cloud/external/api/logEvent?token=fFBWjj108jcqQ7XmRXeDQ4MCMHJ3os6_&code=temp_too_low")
     else:
         print ('temp fine')
     
-    if sense.humidity >= 50:
+    if sense.humidity >= 40:
         print ('humid high')
         requests.get("https://blynk.cloud/external/api/logEvent?token=fFBWjj108jcqQ7XmRXeDQ4MCMHJ3os6_&code=humidity_too_high")
     elif sense.humidity <= 20:
