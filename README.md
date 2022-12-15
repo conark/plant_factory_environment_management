@@ -25,14 +25,15 @@ The environmental control system requires using cameras to monitor and record mu
 **Proposed tech – Software**
 
 - Firebase
-- Blynk or ThingSpeak
+- Blynk
 - OpenCV (For camera)
 
 **Proposed tech - Hardware**
 
 - Raspberry Pi
 - Sensor hut
-- Camera module
+- Raspberry Pi Camera module
+- USB connect Web camera - (Logicool HD720p)
 - A Box as Factory 
 
 **Functions**
